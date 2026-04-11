@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap');
+
+.nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #111827;
+  display: flex;
+  gap: 8px;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  margin: auto;
+}
+
+.link {
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #6366f1;
+}
+
+.active {
+  color: #6366f1;
+  border-bottom: 2px solid #6366f1;
+}
+
+.favBadge {
+  background-color: #eef2ff;
+  color: #6366f1;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid #c7d2fe;
+}

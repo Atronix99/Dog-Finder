@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Playwrite IE", cursive;
+  background-color: #f9f9fb;
+  color: #374151;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin: 0;
+  color: #111827;
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.heroSection {
+  padding: 60px 20px;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 8vw, 4rem);
+  margin-bottom: 10px;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}

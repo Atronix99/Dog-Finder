@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap');
+
+
+.counter {
+  font-family: "Playwrite IE", cursive;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #6366f1;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  display: inline-flex;
+}
+
+main, section, div {
+  max-width: 100%;
+  overflow-x: hidden;
+}

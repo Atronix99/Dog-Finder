@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap');
+
+.container {
+  padding: 40px 20px;
+  margin: 0 auto;
+  background-color: #f9f9fb;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #1a1a1b;
+  margin-bottom: 30px;
+  font-family: 'Playwrite IE', cursive;
+}
+
+.breedCard {
+  background: #ffffff;
+  border: 1px solid #e1e1e6;
+  padding: 24px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.breedCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.input {
+  font-family: 'Playwrite IE', cursive;
+  width: 100%;
+  max-width: 400px;
+  padding: 14px 24px;
+  border: 2px solid #e1e1e6;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #6366f1;
+}
+
+.button {
+  font-family: 'Playwrite IE', cursive;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #6366f1;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #4f46e5;
+}
+
+.isFavorite {
+  background-color: #ef4444;
+}
+
+.isFavorite:hover {
+  background-color: #dc2626;
+}
