@@ -12,12 +12,14 @@
   margin: 50px auto;
   max-width: 600px;
   width: 90%;
+  box-sizing: border-box;
 }
 
 .dogImage {
   display: block;
   max-width: 100%;
-  height: auto;
+  max-height: 400px;
+  object-fit: contain;
   border-radius: 10px;
   margin: 20px 0;
 }
@@ -38,14 +40,16 @@
 
 .buttonGroup {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   margin-top: 30px;
   justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .button {
   font-family: 'Playwrite IE', cursive;
-  padding: 10px 20px;
+  padding: 10px 16px;
   border: none;
   border-radius: 10px;
   background-color: #6366f1;
@@ -53,6 +57,10 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
 }
 
 .button:hover {
@@ -63,4 +71,20 @@
   background-color: #ccc;
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+    margin: 20px auto;
+  }
+
+  .buttonGroup {
+    gap: 8px;
+  }
+
+  .button {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
 }

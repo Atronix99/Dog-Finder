@@ -1,20 +1,30 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useCallback, useContext } from 'react';
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import styles from './Products.module.css';
+import { FavouritesContext } from '../context/FavouritesContext';
 
 const DogDetail = () => {
   const { id } = useParams();
   const [imageUrl, setImageUrl] = useState(null);
-  const [breedsList, setBreedsList] = useState([]);
+  const [navigationList, setNavigationList] = useState([]);
   const [loading, setLoading] = useState(false);
+  
   const navigate = useNavigate();
+  const location = useLocation();
+  const { favorites } = useContext(FavouritesContext);
+
+  const isFromFavorites = location.state?.fromFavorites;
 
   useEffect(() => {
-    fetch("https://dog.ceo/api/breeds/list/all")
-      .then((res) => res.json())
-      .then((data) => setBreedsList(Object.keys(data.message)))
-      .catch(err => console.error("Błąd listy ras:", err));
-  }, []);
+    if (isFromFavorites && favorites.length > 0) {
+      setNavigationList(favorites);
+    } else {
+      fetch("https://dog.ceo/api/breeds/list/all")
+        .then((res) => res.json())
+        .then((data) => setNavigationList(Object.keys(data.message)))
+        .catch(err => console.error("Błąd listy ras:", err));
+    }
+  }, [id, favorites, isFromFavorites]);
 
   const fetchImage = useCallback(async () => {
     if (!id) return;
@@ -41,16 +51,20 @@ const DogDetail = () => {
     fetchImage();
   }, [fetchImage]);
 
-  const currentIndex = breedsList.indexOf(id);
+  const currentIndex = navigationList.indexOf(id);
   const hasPrev = currentIndex > 0;
-  const hasNext = currentIndex < breedsList.length - 1;
+  const hasNext = currentIndex < navigationList.length - 1;
 
   const goToPrev = () => {
-    if (hasPrev && !loading) navigate(`/products/${breedsList[currentIndex - 1]}`);
+    if (hasPrev && !loading) {
+      navigate(`/products/${navigationList[currentIndex - 1]}`, { state: location.state });
+    }
   };
 
   const goToNext = () => {
-    if (hasNext && !loading) navigate(`/products/${breedsList[currentIndex + 1]}`);
+    if (hasNext && !loading) {
+      navigate(`/products/${navigationList[currentIndex + 1]}`, { state: location.state });
+    }
   };
 
   return (

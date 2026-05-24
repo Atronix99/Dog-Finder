@@ -78,3 +78,31 @@
 .isFavorite:hover {
   background-color: #dc2626;
 }
+
+@media (max-width: 500px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .breedCard {
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .breedCard > div {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .breedCard .button {
+    flex: 1;
+    text-align: center;
+  }
+}

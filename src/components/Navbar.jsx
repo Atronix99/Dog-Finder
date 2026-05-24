@@ -11,6 +11,7 @@ const Navbar = () => {
       <div className={styles.logo}>
         🐶 <span>DogFinder</span>
       </div>
+      
       <div className={styles.links}>
         <NavLink 
           className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ""}`} 
@@ -22,12 +23,16 @@ const Navbar = () => {
           className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ""}`} 
           to="/products"
         >
-          Rasy psów
+          Rasy
         </NavLink>
       </div>
-      <div className={styles.favBadge}>
-        Ulubione: <strong>{favorites.length}</strong>
-      </div>
+
+      <NavLink 
+        className={({ isActive }) => `${styles.favBadge} ${isActive ? styles.favActive : ""}`} 
+        to="/favorites"
+      >
+        <span className={styles.favText}>Ulubione: </span><strong>{favorites.length}</strong>
+      </NavLink>
     </nav>
   )
 }
